@@ -49,7 +49,7 @@ winget install Microsoft.EdgeWebView2Runtime
 ### Build
 
 ```
-git clone https://github.com/TON_USER/astra.git
+git clone https://github.com/NOVA1crypt/astra.git
 cd astra
 cargo run
 ```
