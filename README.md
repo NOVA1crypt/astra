@@ -1,35 +1,35 @@
 # Astra
 
-Navigateur web cross-platform construit en Rust avec WebKit.
+A cross-platform web browser built in Rust with WebKit-based web views.
 
-## Plateformes
+## Platforms
 
-| OS | Moteur |
+| OS | Engine |
 |----|--------|
 | macOS | WebKit (WKWebView) |
 | Linux | WebKit2GTK |
 | Windows | WebView2 (Edge) |
 
-## Fonctionnalités
+## Features
 
-- Navigation avec historique (retour / avant)
-- Barre d'adresse — URL directe, domaine ou recherche
-- Rechargement de page
-- Page d'accueil personnalisée
-- Indicateur de chargement
-- Raccourcis clavier (`Cmd/Ctrl+L`, `Cmd/Ctrl+R`, `F5`)
-- Moteur de recherche : Brave Search
+- Browsing history with back and forward navigation
+- Address bar for direct URLs, domains, or search queries
+- Page reload
+- Custom home page
+- Loading indicator
+- Keyboard shortcuts (`Cmd/Ctrl+L`, `Cmd/Ctrl+R`, `F5`)
+- Brave Search as the default search engine
 
 ## Stack
 
-- **Rust** — logique principale
-- **wry** — WebView cross-platform
-- **tao** — fenêtre native cross-platform
-- **rusqlite** — historique (SQLite)
+- **Rust** - core application logic
+- **wry** - cross-platform WebView integration
+- **tao** - native cross-platform windowing
+- **rusqlite** - SQLite-backed browsing history
 
 ## Installation
 
-### Prérequis
+### Requirements
 
 **macOS**
 ```
@@ -54,31 +54,31 @@ cd astra
 cargo run
 ```
 
-### Release
+### Release Build
 
 ```
 cargo build --release
 ./target/release/astra
 ```
 
-## Structure
+## Project Structure
 
 ```
 src/
 ├── main.rs
-├── app.rs              — event loop
+├── app.rs              - event loop
 ├── browser/
-│   ├── window.rs       — fenêtre + WebViews
-│   └── ipc.rs          — messages toolbar ↔ Rust
+│   ├── window.rs       - window and WebViews
+│   └── ipc.rs          - toolbar to Rust messages
 ├── features/
-│   └── history.rs      — historique SQLite
+│   └── history.rs      - SQLite history
 └── utils/
-    └── url.rs          — résolution URL / recherche
+    └── url.rs          - URL and search resolution
 ui/
-├── toolbar/            — barre de navigation (HTML/CSS/JS)
-└── newtab/             — page d'accueil
+├── toolbar/            - navigation bar (HTML/CSS/JS)
+└── newtab/             - home page
 ```
 
-## Licence
+## License
 
 MIT
